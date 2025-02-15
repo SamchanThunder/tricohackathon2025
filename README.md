@@ -1,3 +1,5 @@
+# SmartConnect: Connections that Count
+-------
 # The Problem
 As we scroll through the job market, post-grad life, or as current students, it can be tough figuring out a path or the next step to take.  Those that are just entering this new era of their lives need tremendous help connecting to people that can offer this guidance. Thus we created SmartConnect.
 
