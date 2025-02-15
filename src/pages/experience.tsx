@@ -51,7 +51,7 @@ function Experience(){
                     experiences
                 });
     
-                navigate("/");
+                navigate("/addPfp");
             } catch (error) {
                 console.error("Error updating experiences:", error);
                 alert("Error updating experiences. Please try again.");

@@ -1,4 +1,6 @@
 body {
+    position: relative;
+    top: 30px;
     background-color: #c2bfba;
 }
 

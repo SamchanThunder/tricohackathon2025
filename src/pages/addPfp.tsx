@@ -49,9 +49,9 @@ function AddPfp() {
                     pfp: imageUrl,
                 });
 
-                navigate("/home");
+                navigate("/searchusers");
             } catch (error) {
-                alert("Failed to update profile picture. Please try again.");
+                alert("Failed to update pfp");
             }
         } else {
             alert("Not logged in");

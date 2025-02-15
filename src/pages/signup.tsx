@@ -23,7 +23,7 @@ function SignUp() {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             await set(ref(db, 'users/' + userCredential.user.uid), {
-                username: username,
+                username: username.toLowerCase(),
                 name: name,
             });
             console.log("User signed up successfully");
