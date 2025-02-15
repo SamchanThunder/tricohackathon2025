@@ -1,0 +1,89 @@
+.searchUsersContainer {
+padding-top: 120px;
+text-align: center;
+position: fixed;
+width: 100vw;
+top: 30vh;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.title {
+font-size: 50px;
+font-weight: bold;
+color: #ffffff;
+display: inline-block;
+}
+
+.searchBar {
+margin: 15px auto;
+padding: 10px;
+width: 50%;
+max-width: 600px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+color: rgb(107, 106, 106);
+display: block;
+background-color: white;
+}
+
+.usersListContainer {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+margin-top: 20px;
+padding: 10px;
+}
+
+.userCard {
+width: 300px;
+border: 2px solid #a13737;
+background-color: rgba(255, 255, 255, 0.319);
+border-radius: 10px;
+padding: 20px;
+text-decoration: none;
+color: white;
+transition: transform 0.3s ease;
+text-align: left;
+}
+
+.userCard:hover {
+transform: scale(1.05);
+color: white;
+}
+
+.userName {
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 10px;
+text-align: center;
+}
+
+.userRole,
+.userJob {
+font-size: 18px;
+color: #555;
+margin-bottom: 5px;
+text-align: center;
+}
+
+.userJob {
+    color: #747474;
+}
+
+.userInterests {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 5px;
+margin-top: 10px;
+}
+
+.interestTag {
+background-color: #a13737;
+padding: 5px 10px;
+border-radius: 15px;
+font-size: 14px;
+}
