@@ -14,21 +14,25 @@ function ProfileTemplate1(){
             title: "Discovered My Passion for Baking",
             date: "06/15/2005",
             description: "Baked my first cake with my grandma, realizing the joy it brought to our family during tough times.",
+            imgUrl: "https://www.allrecipes.com/thmb/yqiW2Z8jZEUiN8IaMqDoRxbyOTQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ar-courtney-kassel-grandma-cake-7692809097974b1ea6327d3255e94274.jpg",
         },
         {
             title: "Graduated from Culinary School",
             date: "05/20/2015",
             description: "Completed my pastry arts program, specializing in cake decoration.",
+            imgUrl: "",
         },
         {
             title: "Landed First Job as Assistant Baker",
             date: "07/01/2015",
             description: "Started working at 'Sweet Dreams Bakery', learning from experienced cake decorators.",
+            imgUrl: "",
         },
         {
             title: "Bought my first car!",
             date: "04/08/2016",
             description: "Started working at 'Sweet Dreams Bakery', learning from experienced cake decorators.",
+            imgUrl: "https://cdn.motor1.com/images/mgl/J41MJ/s3/5-cheapest-car-brands-to-buy.jpg",
         },
         {
             title: "Promoted to Head Cake Decorator",
@@ -39,6 +43,7 @@ function ProfileTemplate1(){
             title: "Opened My Own Bakery",
             date: "09/01/2022",
             description: "Launched 'Rise & Shine Cakes', fulfilling my dream of owning a bakery that celebrates life's moments.",
+            imgUrl: "https://images.thebusinessplanshop.com/2680/how-to-open-a-bakery.png",
         }
     ];
     
@@ -88,6 +93,7 @@ function ProfileTemplate1(){
                         <div key={index} className="experience-item">
                             <h3>{exp.title}</h3>
                             <p>{exp.date}</p>
+                            <img src={exp.imgUrl} className="expImg"/>
                             <div className="descDisp">{exp.description}</div>
                         </div>
                     ))}

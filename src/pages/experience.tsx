@@ -8,6 +8,7 @@ interface Experience {
     title: string;
     date: string;
     description: string;
+    imgUrl: string;
 }
 
 function Experience(){
@@ -20,6 +21,7 @@ function Experience(){
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
     const [description, setDescription] = useState('');
+    const [imgUrl, setImgUrl] = useState('');
 
     function openEdit(){
         setEdit(true);
@@ -34,11 +36,13 @@ function Experience(){
             title: title,
             date: date,
             description: description,
+            imgUrl: imgUrl,
         }
         setExperiences(prevExperiences => [...prevExperiences, newExperience]);
         setTitle('');
         setDate('');
         setDescription('');
+        setImgUrl('');
         setEdit(false);
     }
 
@@ -74,6 +78,7 @@ function Experience(){
                         <div key={index} className="experience-item">
                             <h3>{exp.title}</h3>
                             <p>{exp.date}</p>
+                            <img src={exp.imgUrl} className="expImg"/>
                             <div className="descDisp">{exp.description}</div>
                         </div>
                     ))}
@@ -86,6 +91,8 @@ function Experience(){
                 <input className="inputTitle" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Type here..."></input>
                 <div className="titleExperience">Date</div>
                 <input className="dateExperience" type="date" value={date} onChange={(e) => setDate(e.target.value)}></input>
+                <div className="titleExperience">Image URL</div>
+                <input className="inputTitle" value={imgUrl} onChange={(e) => setImgUrl(e.target.value)} placeholder="Link here..."></input>
                 <div className="titleExperience">Description</div>
                 <textarea className="experienceType" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Type here..."></textarea>
                 <button className="submitNewExperience" onClick={addExperience}>Submit</button>

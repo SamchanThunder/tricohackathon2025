@@ -1,6 +1,6 @@
 body {
     position: relative;
-    top: 30px;
+    top: 45px;
     background-color: #c2bfba;
 }
 
@@ -167,4 +167,14 @@ body {
     width: 300px;
     background-color: #a13737;
     border: solid 2px #c28e16;
+}
+
+.expImg {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.blog {
+    color: white;
+    font-size: 20px;
 }

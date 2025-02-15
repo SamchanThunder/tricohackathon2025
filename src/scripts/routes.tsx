@@ -10,6 +10,7 @@ import Jobs from '../pages/job';
 import ProfileTemplate2 from '../pages/profiletemplate2';
 import ProfileTemplate from '../pages/myProfile';
 import SearchUsers from '../pages/searchUsers';
+import ProfileTemplate3 from '../pages/profiletemplate3';
 
 const routes: RouteObject[] = [
   {
@@ -47,6 +48,10 @@ const routes: RouteObject[] = [
   {
     path: '/users/sthompson',
     element: <ProfileTemplate2 />
+  },
+  {
+    path: '/users/simonejohnson',
+    element: <ProfileTemplate3 />
   },
   {
     path: '/users/myprofile',

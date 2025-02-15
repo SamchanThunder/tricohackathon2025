@@ -8,22 +8,25 @@ function ProfileTemplate2(){
     const name = "Sarah Thompson"
     const pfp = "https://www.chalkbeat.org/resizer/v2/EV42XEXNPRCZHGLMHIQJ7EP4JY.jpg?auth=dabd6f307781b525b7e20d46a5823b644d9048460672d2ba147fc8ad80b4136d&quality=85&width=400&height=509";
     const role = "Mentor";
-    const email = "sthompson@email.com";
+    const email = "sthompson@gmail.com";
     const timeline = [
         {
             title: "Started College",
             date: "09/01/2010",
             description: "Began my journey at State University, unsure of my major.",
+            imgUrl: "",
         },
         {
             title: "Volunteered at After-School Program",
             date: "03/15/2012",
             description: "First experience working with children, sparking my interest in education.",
+            imgUrl: "https://hhfamily.com/wp-content/uploads/2022/12/Benefits-of-Working-with-Children.png",
         },
         {
             title: "Changed Major to Education",
             date: "01/10/2013",
             description: "Finally found my calling and switched my focus to Elementary Education.",
+            imgUrl: "",
         },
         {
             title: "Graduated with Bachelor's in Education",
@@ -34,11 +37,13 @@ function ProfileTemplate2(){
             title: "First Teaching Position",
             date: "08/25/2015",
             description: "Began teaching 3rd grade at Sunshine Elementary School.",
+            imgUrl: "",
         },
         {
             title: "Received 'Teacher of the Year' Award",
             date: "06/10/2020",
             description: "Recognized for my innovative teaching methods and dedication to students.",
+            imgUrl: "https://markedmomentskeepsakes.com/cdn/shop/products/thanks-teacher-of-year-onplaque3-sq.jpg?v=1677754544&width=1445",
         }
     ];
 
@@ -83,6 +88,7 @@ function ProfileTemplate2(){
                         <div key={index} className="experience-item">
                             <h3>{exp.title}</h3>
                             <p>{exp.date}</p>
+                            <img src={exp.imgUrl} className="expImg"/>
                             <div className="descDisp">{exp.description}</div>
                         </div>
                     ))}

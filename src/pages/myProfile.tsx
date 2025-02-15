@@ -7,6 +7,7 @@ interface Experience {
     title: string;
     date: string;
     description: string;
+    imgUrl: string;
 }
 
 function MyProfile() {
@@ -95,6 +96,7 @@ function MyProfile() {
                         <div key={index} className="experience-item">
                             <h3>{exp.title}</h3>
                             <p>{exp.date}</p>
+                            <img src={exp.imgUrl} className="expImg"/>
                             <div className="descDisp">{exp.description}</div>
                         </div>
                     ))}
