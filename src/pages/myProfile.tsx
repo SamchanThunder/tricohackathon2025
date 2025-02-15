@@ -1,61 +1,69 @@
 import React, { useState, useEffect } from 'react';
+import { auth, db } from '../scripts/firebase';
+import { ref, get } from "firebase/database";
 import '../stylesheets/profile.css';
 
-function MyProfile(){
-    const aboutme = "They say the best cakes tell a story, and I guess mine starts a little bittersweet. For as long as I can remember, I've found solace in the kitchen. Growing up, things weren't always easy. My family moved around a lot, and there were times when we didn't know where our next meal was coming from. But my grandma, bless her heart, always made sure we had something to celebrate, even if it was just a simple sugar cookie. She taught me that even in the darkest of times, a little sweetness can make all the difference. Now, as a cake decorator, I pour all that love and resilience into every creation. Each cake is a reminder that even from humble beginnings, something extraordinary can rise.";
-    const job = "Cake Decorator"
-    const interests = ["Cooking","Coffee roasting", "Crocheting", "Writing", "Singing"];
-    const name = "Evan Rogers"
-    const pfp = "https://www.threesquare.org/images/about-threesquare/managers/joe-leininger-threesquare.jpg";
-    const role = "Mentor";
-    const email = "erogers123@gmail.com";
-    const timeline = [
-        {
-            title: "Discovered My Passion for Baking",
-            date: "06/15/2005",
-            description: "Baked my first cake with my grandma, realizing the joy it brought to our family during tough times.",
-        },
-        {
-            title: "Graduated from Culinary School",
-            date: "05/20/2015",
-            description: "Completed my pastry arts program, specializing in cake decoration.",
-        },
-        {
-            title: "Landed First Job as Assistant Baker",
-            date: "07/01/2015",
-            description: "Started working at 'Sweet Dreams Bakery', learning from experienced cake decorators.",
-        },
-        {
-            title: "Bought my first car!",
-            date: "04/08/2016",
-            description: "Started working at 'Sweet Dreams Bakery', learning from experienced cake decorators.",
-        },
-        {
-            title: "Promoted to Head Cake Decorator",
-            date: "03/15/2018",
-            description: "Recognized for my creativity and attention to detail, took on lead role in cake design.",
-        },
-        {
-            title: "Opened My Own Bakery",
-            date: "09/01/2022",
-            description: "Launched 'Rise & Shine Cakes', fulfilling my dream of owning a bakery that celebrates life's moments.",
-        }
-    ];
-    
+interface Experience {
+    title: string;
+    date: string;
+    description: string;
+}
 
-    function copy(){
-        var copyText = email
-        
-        navigator.clipboard.writeText(copyText);
-      
-        alert("Copied email: " + copyText);
+function MyProfile() {
+    const [aboutme, setAboutme] = useState('');
+    const [job, setJob] = useState('');
+    const [interests, setInterests] = useState<string[]>([]);
+    const [name, setName] = useState('');
+    const [pfp, setPfp] = useState('');
+    const [role, setRole] = useState('');
+    const [email, setEmail] = useState('');
+    const [timeline, setTimeline] = useState<Experience[]>([]);
+
+    useEffect(() => {
+        const user = auth.currentUser;
+        if (user) {
+            retrieveUserData(user.uid);
+        }
+    }, []);
+
+    function retrieveUserData(uid: string) {
+        const userRef = ref(db, 'users/' + uid);
+        get(userRef)
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const userData = snapshot.val();
+                    setAboutme(userData.aboutme);
+                    setJob(userData.job);
+                    setInterests(userData.interests);
+                    setName(userData.name);
+                    setPfp(userData.pfp);
+                    setRole(userData.role);
+                    setEmail(userData.email);
+
+                    if (userData.timeline && Array.isArray(userData.timeline.experiences)) {
+                        setTimeline(userData.timeline.experiences);
+                    }else {
+                        console.error("Timeline experiences is not an array");
+                        setTimeline([]);
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    function copy() {
+        navigator.clipboard.writeText(email);
+        alert("Copied email: " + email);
         return false;
     }
-    return(
+
+    return (
         <div className="fullContainer">
             <div className="profileContainer">
                 <div className="leftSide">
-                    <div className="backgroundImage" style={{ backgroundImage: `url(${pfp})`}}>
+                    <div className="backgroundImage" style={{ backgroundImage: `url(${pfp})` }}>
                         <div className="name">{name}</div>
                         <div className="job">{job}</div>
                     </div>
@@ -63,14 +71,14 @@ function MyProfile(){
                 <div className="rightSide">
                     <div className="infoSection role">
                         <h2 className="sectionTitle">Role</h2>
-                        <p className="roleText" style={{"fontSize": "40px"}}>{role}</p>
+                        <p className="roleText" style={{ fontSize: "40px" }}>{role}</p>
                     </div>
                     <button className="getEmail" onClick={copy}>{email}</button>
                     <div className="infoSection interests">
                         <h2 className="sectionTitle">Interests</h2>
                         <ul className="interestsList">
                             {interests.map((interest, index) => (
-                                <li key={index} className="interestItem" style={{"border": "solid 2px #a13737"}}>{interest}</li>
+                                <li key={index} className="interestItem" style={{ border: "solid 2px #a13737" }}>{interest}</li>
                             ))}
                         </ul>
                     </div>
@@ -78,7 +86,6 @@ function MyProfile(){
             </div>
             <h2 className="sectionTitle">My Story</h2>
             <div className="storySec">
-                
                 {aboutme}
             </div>
             <div className="timelineSection">
@@ -94,7 +101,7 @@ function MyProfile(){
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default MyProfile;

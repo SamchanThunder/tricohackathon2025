@@ -49,7 +49,7 @@ function AddPfp() {
                     pfp: imageUrl,
                 });
 
-                navigate("/searchusers");
+                navigate("/users/myprofile");
             } catch (error) {
                 alert("Failed to update pfp");
             }

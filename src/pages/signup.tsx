@@ -25,6 +25,7 @@ function SignUp() {
             await set(ref(db, 'users/' + userCredential.user.uid), {
                 username: username.toLowerCase(),
                 name: name,
+                email: email,
             });
             console.log("User signed up successfully");
             navigate("/ChooseRole");

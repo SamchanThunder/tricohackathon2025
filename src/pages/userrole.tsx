@@ -12,7 +12,7 @@ function UserRole(){
             await update(ref(db, 'users/' + user.uid), {
                 role: "Mentor"
             }) 
-            navigate("/Interests");
+            navigate("/Jobs");
         }else{
             alert("Not logged in");
         }
@@ -22,7 +22,7 @@ function UserRole(){
             update(ref(db, 'users/' + user.uid), {
                 role: "Mentee"
             }) 
-            navigate("/Interests");
+            navigate("/Jobs");
         }else{
             alert("Not logged in");
         }
