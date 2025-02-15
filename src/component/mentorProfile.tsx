@@ -31,7 +31,7 @@ interface MentorProfileProps {
   mentor?: MentorData;
 }
 
-const App: React.FC<MentorProfileProps> = ({ mentor }) => {
+const MentorProfile: React.FC<MentorProfileProps> = ({ mentor }) => {
   const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null);
   const navigate = useNavigate();
 
@@ -248,4 +248,4 @@ const App: React.FC<MentorProfileProps> = ({ mentor }) => {
   );
 };
 
-export default App;
+export default MentorProfile;
