@@ -4,46 +4,46 @@ import '../stylesheets/profile.css';
 function ProfileTemplate3(){
     const aboutme = "I grew up in a typical suburban family, always the good kid in school and competitive in sports. Most of my friends aimed to be doctors or lawyers, but I never felt drawn to just one career. What I really looked forward to were trips to different places during summer and winter vacations. Looking back, I wish I had listened to myself more—maybe I wouldn’t have applied to law school but instead focused on building skills for remote work, like coding.\nTaking an unconventional path can feel scary—what if it doesn’t work out? What if I can’t go back? But once you start living in a way that truly excites you, things just seem to fall into place. I made a lifelong friend while working at an NGO for women’s rights, and now we travel together photographing wildlife in national parks. I’m a big believer that when you follow your passion, the universe helps you along the way.";
     const job = "Minimalist Nomad"
-    const interests = ["Reading", "Outdoor Education", "Art", "Child Psychology", "Gardening"];
+    const interests = ["Language learning", "Reading", "Photography", "Meditation"];
     const name = "Simone Johnson"
     const pfp = "https://www.boardgains.com/cdn/shop/articles/meditation_3.png?v=1683211895&width=2048";
     const role = "Mentor";
     const email = "simonethenomad@gmail.com";
     const timeline = [
         {
-            title: "Started College",
-            date: "09/01/2010",
-            description: "Began my journey at State University, unsure of my major.",
+            title: "0–18 years old",
+            date: "1990–2008",
+            description: "I love learning languages and I realized early that I had knack for it. I speak French, Spanish, Arabic and Swahili",
             imgUrl: "",
         },
         {
-            title: "Volunteered at After-School Program",
-            date: "03/15/2012",
-            description: "First experience working with children, sparking my interest in education.",
-            imgUrl: "https://hhfamily.com/wp-content/uploads/2022/12/Benefits-of-Working-with-Children.png",
+            title: "18–22 years old",
+            date: "2008–2012",
+            description: "Went to Vassar College and majored in psychology; published a socio-anthropology research paper about how societal narratives shape dating, desirability politics, and marriage rates among Black women; volunteered at genealogy organizing of hispanic immigrants family and become a director of the program for immigrant worker legal right.",
+            imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrSvqYse69QLHPQoNCIXwriZa1NBDjbdZT_g&s",
         },
         {
-            title: "Changed Major to Education",
-            date: "01/10/2013",
-            description: "Finally found my calling and switched my focus to Elementary Education.",
+            title: "22–25 years old",
+            date: "2012–2015",
+            description: "I guess at some point I did want to be a lawyer for I dreamed it would be a powerful tool that protects vulnerable communities. I was extremely happy that I got into a top law school.",
+            imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfOnOwOybDqjI26nwTk2IqCwNSp7zbnaVRkA&s",
+        },
+        {
+            title: "25–28 years old",
+            date: "2015–2018",
+            description: "Started working in a law firm in New York, later promoted into associate attorney. I felt conflicted about defending clients they don’t believe in or working in areas that benefit large corporations over individuals.",
+        },
+        {
+            title: "28–30 years old",
+            date: "2018–2020",
+            description: "‘Caribbean Women for Thriving’ reached out to me to be their new program’s law consultant. I quit my job and joined; I met my tarot teacher in Columbia. We went to Bali to meditate; I later relocated to Brazil because I always wanted to immerse myself in the Amazon rainforest for a while.",
+            imgUrl: "https://loopnewslive.blob.core.windows.net/liveimage/sites/default/files/2019-05/QmneQw2MTo.jpg",
+        },
+        {
+            title: "30–33 years old",
+            date: "2020–Present",
+            description: "I fully transitioned into a location-independent life and traveled extensively, focusing on wildlife photography and NGO work/advocacy.",
             imgUrl: "",
-        },
-        {
-            title: "Graduated with Bachelor's in Education",
-            date: "05/20/2015",
-            description: "Completed my degree, excited to start my teaching career.",
-        },
-        {
-            title: "First Teaching Position",
-            date: "08/25/2015",
-            description: "Began teaching 3rd grade at Sunshine Elementary School.",
-            imgUrl: "",
-        },
-        {
-            title: "Received 'Teacher of the Year' Award",
-            date: "06/10/2020",
-            description: "Recognized for my innovative teaching methods and dedication to students.",
-            imgUrl: "https://markedmomentskeepsakes.com/cdn/shop/products/thanks-teacher-of-year-onplaque3-sq.jpg?v=1677754544&width=1445",
         }
     ];
 

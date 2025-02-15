@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# The Problem
+As we scroll through the job market, post-grad life, or as current students, it can be tough figuring out a path or the next step to take.  Those that are just entering this new era of their lives need tremendous help connecting to people that can offer this guidance. Thus we created SmartConnect.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Our Mission
+We exist to improve the way individuals collaborates through a 1-on-1 connection between mentors and mentees. This connection gives mentees a lens into the next stage of their lives and mentors the opportunity to help emerging talent find their footing.
 
-Currently, two official plugins are available:
+# What we offer
+We offer:
+a chance for people to give their experiences and share interests.
+a personalized way for people, whether mentor or mentee, to form deep relationships.
+an opportunity for people to discover new interests and fields.
+a way for executives to find emerging talent.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How we built it
+React, Typescript, Firebase, CSS
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# If we had more time
+We would definitely love to expand on the functionality of our website through:
+-an improvement in our searching algorithm.
+-implementing a chatting function.
+-expanding to a mobile version of the website.
+-accessibility features (text-to-speech, magnification, screen reader, etc.).
+-an audio uploading feature for users.
+-a built-in video calling feature.

@@ -21,6 +21,13 @@ function SearchUsers() {
             interests: ["Reading", "Outdoor Education", "Art", "Child Psychology", "Gardening"],
             job: "Elementary School Teacher",
             username: "sthompson"
+        },
+        {
+            name: "Simone Johnson",
+            role: "Mentor",
+            interests: ["Language learning", "Reading", "Photography", "Meditation"],
+            job: "Minimalist Nomad",
+            username: "simonejohnson"
         }
     ]);
     const [searchQuery, setSearchQuery] = useState('');
