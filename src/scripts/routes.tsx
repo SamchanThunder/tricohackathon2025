@@ -4,15 +4,12 @@ import UserRole from '../pages/userrole';
 import Interests from '../pages/interests';
 import AboutMe from '../pages/aboutme';
 import Experience from '../pages/experience';
-import MentorProfile from '../pages/mentorprofile';
 import AddPfp from '../pages/addPfp';
-const dummyMentorData = {
-    id: "1",
-    name: "Test User",
-    image: "https://example.com/user.jpg",
-    bio: "Some user bio",
-    timeline: []
-};
+import ProfileTemplate1 from '../pages/profiletemplate1';
+import Jobs from '../pages/job';
+import ProfileTemplate2 from '../pages/profiletemplate2';
+import ProfileTemplate from '../pages/myProfile';
+import SearchUsers from '../pages/searchUsers';
 
 const routes: RouteObject[] = [
   {
@@ -28,6 +25,10 @@ const routes: RouteObject[] = [
     element: <Interests />
   },
   {
+    path: '/Jobs',
+    element: <Jobs />
+  },
+  {
     path: '/AboutMe',
     element: <AboutMe />
   },
@@ -36,13 +37,25 @@ const routes: RouteObject[] = [
     element: <Experience />
   },
   {
-    path: '/MentorProfile',
-    element: <MentorProfile mentor={dummyMentorData}/>
-  },
-  {
     path: '/AddPfp',
     element: <AddPfp />
+  },
+  {
+    path: '/users/evanrogers',
+    element: <ProfileTemplate1 /> 
+  },
+  {
+    path: '/users/sthompson',
+    element: <ProfileTemplate2 />
+  },
+  {
+    path: '/users/myprofile',
+    element: <ProfileTemplate /> },
+  {
+    path: '/searchusers',
+    element: <SearchUsers />
   }
+    
 ];
 
 export default routes;

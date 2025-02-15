@@ -45,20 +45,12 @@ function AddPfp() {
     async function submitPfp() {
         if (user) {
             try {
-                let downloadURL = imageUrl;
-                if (imageFile) {
-                    const imageRef = storageRef(storage, `profilePictures/${user.uid}`);
-                    await uploadBytes(imageRef, imageFile);
-                    downloadURL = await getDownloadURL(imageRef);
-                }
-
                 await update(ref(db, 'users/' + user.uid), {
-                    pfp: downloadURL,
+                    pfp: imageUrl,
                 });
 
                 navigate("/home");
             } catch (error) {
-                console.error("Error updating profile picture: ", error);
                 alert("Failed to update profile picture. Please try again.");
             }
         } else {
